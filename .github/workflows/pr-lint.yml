@@ -1,0 +1,25 @@
+name: PR Lint
+
+on:
+  workflow_call:
+
+jobs:
+  title:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate PR title
+        env:
+          TITLE: ${{ github.event.pull_request.title }}
+        run: |
+          PATTERN='^([A-Z]+-[0-9]+ - )?(feat|fix|chore|docs|refactor|test): .+$'
+          if [[ ! "$TITLE" =~ $PATTERN ]]; then
+            echo "::error::PR title must match: [ISSUE-ID - ]<type>: <description>"
+            echo ""
+            echo "  Types: feat, fix, chore, docs, refactor, test"
+            echo "  Examples:"
+            echo "    feat: add cart page"
+            echo "    BE-003 - fix: handle timeout on RFID read"
+            echo ""
+            echo "  Got: $TITLE"
+            exit 1
+          fi
