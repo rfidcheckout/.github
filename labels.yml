@@ -21,6 +21,11 @@
   color: "8B5CF6"
   description: "Issues que são epics (parent issues)"
 
+# --- Escopo ---
+- name: "hardware"
+  color: "D4C5F9"
+  description: "Integração com hardware (RFID, trava, periféricos)"
+
 # --- Prioridade ---
 - name: "priority:low"
   color: "B0BEC5"

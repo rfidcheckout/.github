@@ -19,9 +19,9 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Sync labels
-        uses: EndBug/label-sync@v2
-        with:
-          config-file: labels.yml
-          repository: ${{ matrix.repo }}
-          delete-other-labels: false
-          token: ${{ secrets.LABEL_SYNC_TOKEN }}
+        env:
+          GH_TOKEN: ${{ secrets.LABEL_SYNC_TOKEN }}
+        run: |
+          yq -r '.[] | "\(.name)\t\(.color)\t\(.description)"' labels.yml | while IFS=$'\t' read -r name color desc; do
+            gh label create "$name" --repo "${{ matrix.repo }}" --color "$color" --description "$desc" --force 2>&1 || true
+          done
