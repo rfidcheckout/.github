@@ -1,0 +1,40 @@
+name: Chore
+description: Manutenção ou infraestrutura
+title: "[Chore] "
+labels: ["type:chore"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: O que precisa ser feito?
+    validations:
+      required: true
+  - type: textarea
+    id: topics
+    attributes:
+      label: Tópicos
+      description: Lista de itens a implementar
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade
+      options:
+        - Low
+        - Normal
+        - High
+        - Critical
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Tamanho
+      options:
+        - XS
+        - S
+        - M
+        - L
+        - XL
+    validations:
+      required: true

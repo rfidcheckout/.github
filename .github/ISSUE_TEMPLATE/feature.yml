@@ -1,0 +1,45 @@
+name: Feature
+description: Nova funcionalidade
+title: "[Feature] "
+labels: ["type:feature"]
+body:
+  - type: textarea
+    id: description
+    attributes:
+      label: Descrição
+      description: O que essa feature deve fazer?
+    validations:
+      required: true
+  - type: textarea
+    id: topics
+    attributes:
+      label: Tópicos
+      description: Lista de itens a implementar
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: Dependências
+      description: Issues ou PRs que precisam ser resolvidos antes
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Prioridade
+      options:
+        - Low
+        - Normal
+        - High
+        - Critical
+    validations:
+      required: true
+  - type: dropdown
+    id: size
+    attributes:
+      label: Tamanho
+      options:
+        - XS
+        - S
+        - M
+        - L
+        - XL
+    validations:
+      required: true
