@@ -1,5 +1,0 @@
-blank_issues_enabled: false
-contact_links:
-  - name: Documentação de Arquitetura
-    url: https://github.com/rfidcheckout/rfid-architecture
-    about: ADRs, padrões e roadmap do projeto
