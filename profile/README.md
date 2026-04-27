@@ -1,8 +1,5 @@
 # RFID Self-Checkout
 
-[![Backend CI](https://github.com/rfidcheckout/rfid-totem-backend/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/rfidcheckout/rfid-totem-backend/actions/workflows/ci.yml)
-[![Frontend CI](https://github.com/rfidcheckout/rfid-totem-frontend/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/rfidcheckout/rfid-totem-frontend/actions/workflows/ci.yml)
-
 Sistema autônomo de ponto de venda para varejo, baseado em leitura RFID para identificação de produtos sem necessidade de leitura individual de códigos de barras.
 
 ## Arquitetura
