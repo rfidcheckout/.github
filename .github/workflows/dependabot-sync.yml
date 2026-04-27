@@ -26,23 +26,9 @@ jobs:
 
           SHA=$(gh api "repos/${{ matrix.repo }}/contents/.github/dependabot.yml" --jq '.sha' 2>/dev/null || echo "")
 
+          ARGS=(-X PUT -f message="chore: sync dependabot config from .github" -f content="$CONTENT")
           if [ -n "$SHA" ]; then
-            gh api "repos/${{ matrix.repo }}/contents/.github/dependabot.yml" \
-              -X PUT \
-              --input - <<EOF
-          {
-            "message": "chore: sync dependabot config from .github",
-            "content": "$CONTENT",
-            "sha": "$SHA"
-          }
-          EOF
-          else
-            gh api "repos/${{ matrix.repo }}/contents/.github/dependabot.yml" \
-              -X PUT \
-              --input - <<EOF
-          {
-            "message": "chore: sync dependabot config from .github",
-            "content": "$CONTENT"
-          }
-          EOF
+            ARGS+=(-f sha="$SHA")
           fi
+
+          gh api "repos/${{ matrix.repo }}/contents/.github/dependabot.yml" "${ARGS[@]}"
