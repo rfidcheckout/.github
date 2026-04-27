@@ -15,7 +15,7 @@ jobs:
     steps:
       - name: Configure repo settings
         env:
-          GH_TOKEN: ${{ secrets.LABEL_SYNC_TOKEN }}
+          GH_TOKEN: ${{ secrets.RFID_GH_TOKEN }}
         run: |
           gh api repos/${{ matrix.repo }} \
             -X PATCH \
@@ -28,7 +28,7 @@ jobs:
 
       - name: Configure branch protection
         env:
-          GH_TOKEN: ${{ secrets.LABEL_SYNC_TOKEN }}
+          GH_TOKEN: ${{ secrets.RFID_GH_TOKEN }}
         run: |
           printf '%s' '{"required_status_checks":null,"enforce_admins":false,"required_pull_request_reviews":{"required_approving_review_count":1},"restrictions":null}' | \
             gh api repos/${{ matrix.repo }}/branches/main/protection -X PUT --input -

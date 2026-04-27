@@ -21,7 +21,7 @@ jobs:
 
       - name: Sync dependabot config
         env:
-          GH_TOKEN: ${{ secrets.LABEL_SYNC_TOKEN }}
+          GH_TOKEN: ${{ secrets.RFID_GH_TOKEN }}
         run: |
           CONTENT=$(base64 -w0 "${{ matrix.config }}")
 
