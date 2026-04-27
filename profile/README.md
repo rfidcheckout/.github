@@ -13,11 +13,11 @@ O sistema opera em um **totem físico** com os seguintes componentes:
 
 ## Repositórios
 
-| Repositório | Descrição |
-|---|---|
-| [rfid-architecture](https://github.com/rfidcheckout/rfid-architecture) | ADRs, padrões, roadmap e documentação cross-repo |
-| [rfid-totem-backend](https://github.com/rfidcheckout/rfid-totem-backend) | Monolito Go — API REST, WebSocket, hardware, checkout |
-| [rfid-totem-frontend](https://github.com/rfidcheckout/rfid-totem-frontend) | Aplicação Angular — interface do totem |
+| CI | Repositório | Descrição |
+|---|---|---|
+| | [rfid-architecture](https://github.com/rfidcheckout/rfid-architecture) | ADRs, padrões, roadmap e documentação cross-repo |
+| [![Backend CI](https://github.com/rfidcheckout/rfid-totem-backend/actions/workflows/ci.yml/badge.svg)](https://github.com/rfidcheckout/rfid-totem-backend/actions/workflows/ci.yml) | [rfid-totem-backend](https://github.com/rfidcheckout/rfid-totem-backend) | Monolito Go — API REST, WebSocket, hardware, checkout |
+| [![Frontend CI](https://github.com/rfidcheckout/rfid-totem-frontend/actions/workflows/ci.yml/badge.svg)](https://github.com/rfidcheckout/rfid-totem-frontend/actions/workflows/ci.yml) | [rfid-totem-frontend](https://github.com/rfidcheckout/rfid-totem-frontend) | Aplicação Angular — interface do totem |
 
 ## Status
 
@@ -33,5 +33,4 @@ O sistema opera em um **totem físico** com os seguintes componentes:
 | Acesso a dados | sqlc + pgx + goose |
 | API | REST (OpenAPI 3.1) + WebSocket |
 | Frontend | Angular + Angular Material |
-| Hardware | periph.io (GPIO), go.bug.st/serial (USB) |
 | Deploy | Binário único + systemd |
