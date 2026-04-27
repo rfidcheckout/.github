@@ -17,3 +17,12 @@ updates:
       - "type:chore"
     commit-message:
       prefix: "chore"
+
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
+    labels:
+      - "type:chore"
+    commit-message:
+      prefix: "chore"
