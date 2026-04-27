@@ -31,6 +31,5 @@ Repositório de configuração organizacional da [rfidcheckout](https://github.c
 
 ### Dependabot
 
-- [`dependabot/architecture.yml`](dependabot/architecture.yml) — GitHub Actions
 - [`dependabot/backend.yml`](dependabot/backend.yml) — GitHub Actions + Go
 - [`dependabot/frontend.yml`](dependabot/frontend.yml) — GitHub Actions + npm

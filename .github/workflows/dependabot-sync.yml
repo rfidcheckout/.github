@@ -12,8 +12,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - repo: rfidcheckout/rfid-architecture
-            config: dependabot/architecture.yml
           - repo: rfidcheckout/rfid-totem-backend
             config: dependabot/backend.yml
           - repo: rfidcheckout/rfid-totem-frontend
