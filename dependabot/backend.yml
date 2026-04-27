@@ -17,12 +17,3 @@ updates:
       - "type:chore"
     commit-message:
       prefix: "chore"
-
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "weekly"
-    labels:
-      - "type:chore"
-    commit-message:
-      prefix: "chore"

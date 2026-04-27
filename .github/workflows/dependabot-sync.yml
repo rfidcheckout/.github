@@ -3,7 +3,7 @@ name: Dependabot Sync
 on:
   push:
     branches: [main]
-    paths: [dependabot.yml]
+    paths: ["dependabot/**"]
   workflow_dispatch:
 
 jobs:
@@ -11,10 +11,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo:
-          - rfidcheckout/rfid-architecture
-          - rfidcheckout/rfid-totem-backend
-          - rfidcheckout/rfid-totem-frontend
+        include:
+          - repo: rfidcheckout/rfid-architecture
+            config: dependabot/architecture.yml
+          - repo: rfidcheckout/rfid-totem-backend
+            config: dependabot/backend.yml
+          - repo: rfidcheckout/rfid-totem-frontend
+            config: dependabot/frontend.yml
     steps:
       - uses: actions/checkout@v4
 
@@ -22,7 +25,7 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.LABEL_SYNC_TOKEN }}
         run: |
-          CONTENT=$(base64 -w0 dependabot.yml)
+          CONTENT=$(base64 -w0 "${{ matrix.config }}")
 
           SHA=$(gh api "repos/${{ matrix.repo }}/contents/.github/dependabot.yml" --jq '.sha' 2>/dev/null || echo "")
 

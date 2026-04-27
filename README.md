@@ -23,7 +23,7 @@ Repositório de configuração organizacional da [rfidcheckout](https://github.c
 - [`pr-lint.yml`](.github/workflows/pr-lint.yml) — valida título de PR no formato `[ISSUE-ID - ]<type>: <description>`
 - [`label-sync.yml`](.github/workflows/label-sync.yml) — sincroniza labels do [`labels.yml`](labels.yml) para todos os repos da org
 - [`repo-config-sync.yml`](.github/workflows/repo-config-sync.yml) — configura repo settings (squash only, auto-delete branch) e branch protection (require PR, 1 approval)
-- [`dependabot-sync.yml`](.github/workflows/dependabot-sync.yml) — sincroniza [`dependabot.yml`](dependabot.yml) para todos os repos da org
+- [`dependabot-sync.yml`](.github/workflows/dependabot-sync.yml) — sincroniza configs do [`dependabot/`](dependabot/) para todos os repos da org
 
 ### Labels
 
@@ -31,4 +31,6 @@ Repositório de configuração organizacional da [rfidcheckout](https://github.c
 
 ### Dependabot
 
-- [`dependabot.yml`](dependabot.yml) — config canônica do Dependabot (GitHub Actions, Go, npm)
+- [`dependabot/architecture.yml`](dependabot/architecture.yml) — GitHub Actions
+- [`dependabot/backend.yml`](dependabot/backend.yml) — GitHub Actions + Go
+- [`dependabot/frontend.yml`](dependabot/frontend.yml) — GitHub Actions + npm
