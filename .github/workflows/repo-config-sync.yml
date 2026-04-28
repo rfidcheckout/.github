@@ -8,10 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        repo:
-          - rfidcheckout/rfid-architecture
-          - rfidcheckout/rfid-totem-backend
-          - rfidcheckout/rfid-totem-frontend
+        include:
+          - repo: rfidcheckout/rfid-architecture
+            discussions: true
+          - repo: rfidcheckout/rfid-totem-backend
+            discussions: false
+          - repo: rfidcheckout/rfid-totem-frontend
+            discussions: false
     steps:
       - name: Configure repo settings
         env:
@@ -24,4 +27,7 @@ jobs:
             -f allow_merge_commit=false \
             -f allow_rebase_merge=true \
             -f squash_merge_commit_title=PR_TITLE \
-            -f squash_merge_commit_message=PR_BODY
+            -f squash_merge_commit_message=PR_BODY \
+            -F has_wiki=false \
+            -F has_projects=false \
+            -F has_discussions=${{ matrix.discussions }}
