@@ -8,6 +8,10 @@ updates:
       - 'type:chore'
     commit-message:
       prefix: 'chore'
+    groups:
+      github-actions:
+        patterns:
+          - '*'
 
   - package-ecosystem: 'npm'
     directory: '/'
@@ -17,3 +21,11 @@ updates:
       - 'type:chore'
     commit-message:
       prefix: 'chore'
+    groups:
+      angular:
+        patterns:
+          - '@angular/*'
+      typescript:
+        patterns:
+          - 'typescript'
+          - 'typescript-eslint'
