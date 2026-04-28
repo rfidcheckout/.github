@@ -6,6 +6,9 @@ on:
     paths: ["dependabot/**"]
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 jobs:
   sync:
     runs-on: ubuntu-latest
