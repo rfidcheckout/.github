@@ -3,6 +3,8 @@ name: Repo Config Sync
 on:
   workflow_dispatch:
 
+permissions: {}
+
 jobs:
   sync:
     runs-on: ubuntu-latest
