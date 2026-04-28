@@ -21,7 +21,7 @@ O sistema opera em um **totem físico** com os seguintes componentes:
 
 ## Status
 
-🚧 Em desenvolvimento — MVP
+🚧 Em desenvolvimento — [MVP Board](https://github.com/orgs/rfidcheckout/projects/3)
 
 ## Stack
 
