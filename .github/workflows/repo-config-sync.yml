@@ -31,5 +31,5 @@ jobs:
             -f squash_merge_commit_title=PR_TITLE \
             -f squash_merge_commit_message=PR_BODY \
             -F has_wiki=false \
-            -F has_projects=false \
+            -F has_projects=true \
             -F has_discussions=${{ matrix.discussions }}
