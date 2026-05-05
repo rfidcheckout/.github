@@ -20,7 +20,7 @@ Repositório de configuração organizacional da [rfidcheckout](https://github.c
 
 ### Workflows reutilizáveis
 
-- [`pr-lint.yml`](.github/workflows/pr-lint.yml) — valida título de PR no formato `[ISSUE-ID - ]<type>: <description>`
+- [`pr-lint.yml`](.github/workflows/pr-lint.yml) — valida título de PR no formato `<type>[(ISSUE-ID)]: <description>`
 - [`label-sync.yml`](.github/workflows/label-sync.yml) — sincroniza labels do [`labels.yml`](labels.yml) para todos os repos da org
 - [`repo-config-sync.yml`](.github/workflows/repo-config-sync.yml) — configura repo settings (squash only, auto-delete branch); roda ao modificar o workflow ou manualmente
 - [`dependabot-sync.yml`](.github/workflows/dependabot-sync.yml) — sincroniza configs do [`dependabot/`](dependabot/) para todos os repos da org
