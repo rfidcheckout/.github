@@ -11,7 +11,7 @@ jobs:
         env:
           TITLE: ${{ github.event.pull_request.title }}
         run: |
-          PATTERN='^(feat|fix|chore|docs|refactor|test)(\([A-Z]+-[0-9]+(/[0-9]+)*\))?: .+$'
+          PATTERN='^(feat|fix|chore|docs|refactor|test)(\([A-Z]+-[0-9]+(/[0-9]+)*\)|(\(main\)))?: .+$'
           if [[ ! "$TITLE" =~ $PATTERN ]]; then
             echo "::error::PR title must match: <type>[(ISSUE-ID)]: <description>"
             echo ""
@@ -20,6 +20,7 @@ jobs:
             echo "    feat: add cart page"
             echo "    fix(BE-003): handle timeout on RFID read"
             echo "    feat(BE-017/018/019): multiple tickets in one PR"
+            echo "    chore(main): release 0.0.4  (release-please)"
             echo ""
             echo "  Got: $TITLE"
             exit 1
