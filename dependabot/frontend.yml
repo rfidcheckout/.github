@@ -21,7 +21,14 @@ updates:
       - 'type:chore'
     commit-message:
       prefix: 'chore'
+    open-pull-requests-limit: 10
     groups:
+      # Correções de segurança do Angular ficam isoladas: exigem atenção e `ng update`.
+      angular-security:
+        applies-to: 'security-updates'
+        patterns:
+          - '@angular/*'
+      # O framework e o Material têm peer deps entre si, então andam juntos.
       angular:
         patterns:
           - '@angular/*'
@@ -29,7 +36,23 @@ updates:
         patterns:
           - 'typescript'
           - 'typescript-eslint'
+      # Demais dependências em minor/patch num único PR por semana.
+      minor-and-patch:
+        patterns:
+          - '*'
+        update-types:
+          - 'minor'
+          - 'patch'
+        exclude-patterns:
+          - '@angular/*'
+          - 'typescript'
+          - 'typescript-eslint'
+      # Qualquer advisory restante vira um PR só.
+      security:
+        applies-to: 'security-updates'
+        patterns:
+          - '*'
     ignore:
       - dependency-name: 'typescript'
         versions:
-          - '>= 6.0.0'
+          - '~7.0'
