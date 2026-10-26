@@ -17,6 +17,14 @@ updates:
       - "type:chore"
     commit-message:
       prefix: "chore"
+    open-pull-requests-limit: 10
+    groups:
+      "go-mod-minor-and-patch":
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
 
   - package-ecosystem: "gitsubmodule"
     directory: "/"
